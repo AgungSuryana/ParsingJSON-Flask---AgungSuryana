@@ -1,4 +1,3 @@
-/* Global styles */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
@@ -12,24 +11,22 @@ body {
     text-align: center;
 }
 
-/* Container for all content */
 .container {
     width: 100%;
     max-width: 1200px;
-    /* Set max width for the container */
+ 
     padding: 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Card Group for horizontal cards */
 .card-group {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 30px;
-    /* Space between the grouped cards and other content */
+  
 }
 
 /* Card Styles */
@@ -39,7 +36,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     width: 30%;
-    /* Width of each card in the group */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -48,7 +44,6 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Title and Header Styles */
 h1 {
     color: #2c3e50;
     font-size: 2.5rem;
@@ -63,7 +58,6 @@ h3 {
     margin-bottom: 15px;
 }
 
-/* Card Header for Icons */
 .card-header {
     display: flex;
     align-items: center;
@@ -76,7 +70,7 @@ h3 {
     margin-right: 15px;
 }
 
-/* Table Styles */
+
 .data-table {
     width: 100%;
     border-collapse: collapse;
@@ -108,7 +102,7 @@ h3 {
 /* Responsive Design */
 @media (max-width: 768px) {
 
-    /* Stack the grouped cards vertically on smaller screens */
+    
     .card-group {
         flex-direction: column;
         align-items: center;
@@ -135,12 +129,11 @@ h3 {
     }
 }
 
-/* Update the Card Styles to accommodate the table as a card */
+
 .card.full-width {
     width: 95%;
     margin-bottom: 30px; 
-    /* Make it take full width */
-}
+   
 
 /* Adjust table inside card */
 .card.full-width .data-table {
@@ -165,13 +158,13 @@ h3 {
     font-size: 1.1rem;
 }
 
-/* Centered, smaller Month-Year Max card */
+
 .card.month-year-max {
-    width: 50%; /* Adjust width as desired for smaller size */
-    margin: 0 auto; /* Center the card within the container */
+    width: 50%; 
+    margin: 0 auto; 
     padding: 20px;
     margin-top: 20px;
-    text-align: center; /* Center text within the card */
+    text-align: center; 
 }
 
 .card.month-year-max h3 {
@@ -180,7 +173,6 @@ h3 {
     margin-bottom: 15px;
 }
 
-/* Styling for the list inside the Month-Year Max card */
 .month-year-list {
     list-style-type: none;
     padding: 0;
@@ -200,4 +192,5 @@ h3 {
     color: #2980b9;
     margin-right: 8px;
     font-size: 1rem;
+}
 }
