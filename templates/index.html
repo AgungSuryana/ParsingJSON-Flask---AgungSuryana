@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Suhu dan Kelembapan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Cards for Maksimum Suhu, Minimum Suhu, Rata-rata Suhu (Side by Side) -->
+        <div class="card-group">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-thermometer-high"></i>
+                    <h2>Maksimum Suhu: {{ data['suhumax'] }}°C</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-thermometer-low"></i>
+                    <h2>Minimum Suhu: {{ data['suhumin'] }}°C</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h2>Rata-rata Suhu: {{ data['suhurata'] }}°C</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Data Table (as a full-width card) -->
+        <div class="card full-width">
+            <h3>Detail Data:</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Suhu (°C)</th>
+                        <th>Kelembapan (%)</th>
+                        <th>Kecerahan</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in data['nilai_suhu_max_humid_max'] %}
+                    <tr>
+                        <td>{{ item['idx'] }}</td>
+                        <td>{{ item['suhu'] }}°C</td>
+                        <td>{{ item['humid'] }}%</td>
+                        <td>{{ item['kecerahan'] }}</td>
+                        <td>{{ item['timestamp'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Month-Year Max -->
+        <div class="card month-year-max">
+            <h3>Month-Year Max:</h3>
+            <ul class="month-year-list">
+                {% for item in data['month_year_max'] %}
+                <li><i class="fas fa-calendar-alt"></i> {{ item['month_year'] }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>
